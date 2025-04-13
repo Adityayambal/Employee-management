@@ -165,6 +165,13 @@ body::-webkit-scrollbar {
     margin-top: 20px;
     overflow-x: hidden;
     overflow-y: scroll;
-    height: 600px;
+    max-height: 80vh;
     border-radius: 5px;
   }
+  .overflowClass {
+    -ms-overflow-style: none;
+}
+  
+.overflowClass::-webkit-scrollbar {
+    display: none; 
+}
