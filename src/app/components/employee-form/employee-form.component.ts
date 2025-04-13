@@ -50,7 +50,6 @@ export class EmployeeFormComponent implements OnInit {
     if (this.id) {
       this.isEditMode = true;
       // this.service.getById(this.id).subscribe(emp => this.form.patchValue(emp));
-      console.log("this.service.getById(this.id)",this.service.getById(this.id))
       let emp:any = this.service.getById(this.id)
       this.form.patchValue(emp) 
     } else {

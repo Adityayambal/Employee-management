@@ -6,10 +6,23 @@ body {
     padding: 0;
     color: #333;
   }
+  body {
+    -ms-overflow-style: none;
+}
+  
+body::-webkit-scrollbar {
+    display: none; 
+}
   .main{
    padding: 15px;
   }
- 
+  .main {
+    -ms-overflow-style: none;
+}
+  
+.main::-webkit-scrollbar {
+    display: none; 
+}
   .header {
     display: flex;
     align-items: center;
@@ -110,6 +123,13 @@ body {
     overflow-y: auto;
     max-height: 400px;
   }
+  .employee-table {
+    -ms-overflow-style: none;
+}
+  
+.employee-table::-webkit-scrollbar {
+    display: none; 
+}
 
   button:active {
     transform: scale(0.98);
