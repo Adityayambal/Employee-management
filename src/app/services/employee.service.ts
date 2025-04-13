@@ -6,10 +6,14 @@ import { Employee } from '../models/employee.model';
 @Injectable({
   providedIn: 'root'
 })
-export class EmployeeService {
-  private baseUrl = 'http://localhost:3000/employees';
 
-  constructor(private http: HttpClient) {}
+export class EmployeeService {
+  private baseUrl = '';
+
+  constructor(private http: HttpClient) {
+    const isLocalhost = window.location.hostname === 'localhost';
+    this.baseUrl = isLocalhost ? 'http://localhost:3000/employees' : 'https://Employee-management.vercel.app/api/employees';
+  }
 
   getAll(): Observable<Employee[]> {
     return this.http.get<Employee[]>(this.baseUrl);
