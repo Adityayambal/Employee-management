@@ -10,12 +10,13 @@ import { Employee } from '../../models/employee.model';
   styleUrl: './employee-detail.component.css'
 })
 export class EmployeeDetailComponent implements OnInit {
-  employee!: Employee;
+  employee:any;
 
   constructor(private route: ActivatedRoute, private service: EmployeeService) {}
 
   ngOnInit(): void {
-    const id = this.route.snapshot.paramMap.get('id');
-    this.service.getById(id).subscribe(emp => this.employee = emp);
+    const id:any = this.route.snapshot.paramMap.get('id');
+    // this.service.getById(id).subscribe(emp => this.employee = emp);
+    this.employee = this.service.getById(id)
   }
 }

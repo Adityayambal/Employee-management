@@ -22,7 +22,8 @@ export class EmployeeListComponent implements OnInit {
   }
 
   fetchEmployees() {
-    this.employeeService.getAll().subscribe(data => this.employees = data);
+    // this.employeeService.getAll().subscribe(data => this.employees = data);
+    this.employees = this.employeeService.getAll()
   }
 
   deleteEmployee(id: number) {
@@ -32,7 +33,9 @@ export class EmployeeListComponent implements OnInit {
       });
       dialogRef.afterClosed().subscribe(result => {
         if (result) {
-          this.employeeService.delete(id).subscribe(() => this.fetchEmployees());
+          // this.employeeService.delete(id).subscribe(() => this.fetchEmployees());
+          this.employeeService.delete(id)
+          this.employees = this.employeeService.getAll()
           this.showStatus('success','Deleted','Employee deleted sucessfully!')
         }
       });

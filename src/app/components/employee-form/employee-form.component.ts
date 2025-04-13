@@ -49,7 +49,10 @@ export class EmployeeFormComponent implements OnInit {
     this.id = this.route.snapshot.paramMap.get('id');
     if (this.id) {
       this.isEditMode = true;
-      this.service.getById(this.id).subscribe(emp => this.form.patchValue(emp));
+      // this.service.getById(this.id).subscribe(emp => this.form.patchValue(emp));
+      console.log("this.service.getById(this.id)",this.service.getById(this.id))
+      let emp:any = this.service.getById(this.id)
+      this.form.patchValue(emp) 
     } else {
       this.form.patchValue({ avatar: this.getRandomAvatar() });
     }
@@ -91,17 +94,23 @@ export class EmployeeFormComponent implements OnInit {
     const employee = this.form.value;
 
     if (this.isEditMode) {
-      this.service.update(this.id, employee).subscribe(() => {
-        this.showStatus('success','Update','Employee updated sucessfully!')
-        this.router.navigate(['/'])
-      });
+      // this.service.update(this.id, employee).subscribe(() => {
+      //   this.showStatus('success','Update','Employee updated sucessfully!')
+      //   this.router.navigate(['/'])
+      // });
+      this.service.update(this.id, employee)
+      this.showStatus('success','Update','Employee updated sucessfully!')
+      this.router.navigate(['/'])
     } else {
-      this.service.add(employee).subscribe(() => 
-        {
-        this.showStatus('success','Success','Employee added sucessfully!')
-        this.router.navigate(['/'])
+      // this.service.add(employee).subscribe(() => 
+      //   {
+      //   this.showStatus('success','Success','Employee added sucessfully!')
+      //   this.router.navigate(['/'])
       
-      });
+      // });
+      this.service.add(employee)
+      this.showStatus('success','Success','Employee added sucessfully!')
+      this.router.navigate(['/'])
     }
   }
 
