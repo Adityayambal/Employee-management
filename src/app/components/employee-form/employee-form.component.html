@@ -1,0 +1,19 @@
+<div class="main">
+<div class="employee-form-wrapper">
+    <h2>{{ isEditMode ? 'Edit' : 'Add' }} Employee</h2>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <input formControlName="name" placeholder="Full Name" />
+        <input formControlName="company" placeholder="Company" />
+        <input formControlName="email" placeholder="Email" />
+        <input formControlName="contact" placeholder="Contact Number" />
+        <input formControlName="designation" placeholder="Designation" />
+      </div>
+      <div class="form-actions">
+        <button type="submit" class="edit-btn">{{id ? 'Update' : 'Submit'}}</button>
+        <button routerLink="" class="back-btn">Go Back</button>
+      </div>
+    </form>
+  </div>
+</div>
+  

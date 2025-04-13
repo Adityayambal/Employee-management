@@ -1,0 +1,80 @@
+.status-dialog {
+    padding: 24px;
+    text-align: center;
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .dialog-icon {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 16px;
+  }
+  
+  .icon {
+    font-size: 48px;
+  }
+  .mat-icon {
+    height: fit-content;
+    width: fit-content;
+  }
+  .status-dialog.success .icon {
+    color: #28a745;
+  }
+  
+  .status-dialog.error .icon {
+    color: #dc3545; 
+  }
+  
+  .status-dialog.pending .icon {
+    color: #ffc107; 
+  }
+  
+  .dialog-content h2 {
+    font-size: 22px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .dialog-content p {
+    font-size: 16px;
+    color: #555;
+    margin: 0;
+  }
+  
+  .dialog-actions {
+    padding: 0 24px 16px;
+    display: flex;
+    justify-content: center;
+    background-color: #ffffff;
+  }
+  
+  .edit-btn,
+  .back-btn {
+    padding: 10px 25px;
+    margin: 5px;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  .edit-btn {
+    background-color: #4a90e2;
+    color: #fff;
+  }
+  
+  .edit-btn:hover {
+    background-color: #357ab7;
+  }
+  .back-btn {
+    background-color: #f0f1f5;
+    color: #4a90e2;
+    border: 1px solid #ddd;
+  }
+  
+  .back-btn:hover {
+    background-color: #e1e5f0;
+  }

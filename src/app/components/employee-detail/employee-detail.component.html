@@ -1,0 +1,24 @@
+<div class="main">
+    <div class="employee-details-wrapper">
+    <h2>Employee Details</h2>
+    
+    <div class="employee-info">
+      <div class="avatar">
+        <img *ngIf="employee" [src]="employee.avatar" width="100" alt="Employee Avatar" />
+      </div>
+      
+      <div class="employee-details">
+        <p><strong>Name:</strong> {{ employee.name }}</p>
+        <p><strong>Company:</strong> {{ employee.company }}</p>
+        <p><strong>Email:</strong> {{ employee.email }}</p>
+        <p><strong>Contact:</strong> {{ employee.contact }}</p>
+        <p><strong>Designation:</strong> {{ employee.designation }}</p>
+      </div>
+    </div>
+  
+    <div class="form-actions">
+      <button routerLink="/edit/{{ employee.id }}" class="edit-btn">Edit</button>
+      <button routerLink="" class="back-btn">Go Back</button>
+    </div>
+  </div>
+  </div>

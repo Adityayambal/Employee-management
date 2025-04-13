@@ -1,0 +1,42 @@
+<div class="main">
+<div class="header">
+    <h2>Employee List</h2>
+    <button routerLink="/add" class="add-btn">Add Employee</button>
+</div>
+
+<div class="overflowClass">
+<table *ngIf="employees.length > 0" class="employee-table">
+  <thead>
+    <tr>
+      <th>Sr. No.</th>
+      <th>Avatar</th>
+      <th>Employee Name</th>
+      <th>Designation</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let emp of employees; let i = index">
+      <td>{{ i + 1 }}</td>
+      <td><img [src]="emp.avatar" width="40" /></td>
+      <td>{{ emp.name }}</td>
+      <td>{{ emp.designation }}</td>
+      <td class="action-buttons">
+        <button (click)="deleteEmployee(emp.id!)" title="Delete">
+          🗑️
+        </button>
+        <button [routerLink]="['/edit', emp.id]" title="Edit">
+          ✏️
+        </button>
+        <button [routerLink]="['/details', emp.id]" title="View">
+          👁️
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<div *ngIf="employees.length == 0" class="nodatacss">
+    <div>No Data Found</div>
+</div>
+</div>

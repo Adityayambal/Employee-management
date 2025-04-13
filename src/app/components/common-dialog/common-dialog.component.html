@@ -1,0 +1,21 @@
+<div mat-dialog-content class="status-dialog" [ngClass]="data.type">
+  <div class="dialog-icon">
+    <mat-icon class="icon">
+      {{
+        data.type === 'success' ? 'check_circle' :
+        data.type === 'error' ? 'error_outline' :
+        'hourglass_empty'
+      }}
+    </mat-icon>
+  </div>
+  <div class="dialog-content">
+    <h2>{{ data.title }}</h2>
+    <p>{{ data.message }}</p>
+  </div>
+</div>
+<div *ngIf="data.type == 'pending'" mat-dialog-actions  class="dialog-actions">
+    <button class="edit-btn" (click)="closedialog(0)">Yes</button>
+    <button (click)="closedialog(1)"class="back-btn">Close</button>
+  </div>
+
+  
